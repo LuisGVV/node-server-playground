@@ -14,5 +14,9 @@
     "npm": "^5.8.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/LuisGVV/node-server-playground"
+  }
 }
