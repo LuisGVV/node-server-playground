@@ -2,3 +2,4 @@
 .vscode
 notes/
 weather-app/
+*.log
