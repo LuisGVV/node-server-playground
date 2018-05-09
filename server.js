@@ -28,6 +28,14 @@ hbs.registerHelper('getCurrentYear', ()=> new Date().getFullYear());
 
 hbs.registerHelper('ScreamIt', (text)=> text.toUpperCase());
 
+hbs.registerHelper('toDoList', (list, options)=> {
+    var liElements = '';
+    list.forEach(listElement => {
+        liElements += `<li>${options.fn(listElement)}</li>`;
+    });
+    return `<ul>${liElements}</ul>`
+});
+
 app.get('/', function rootGet(req, res) {
     res.render(
         'home.hbs',
@@ -43,6 +51,20 @@ app.get('/about', function about(req, res) {
         'about.hbs',
         {
             pageTitle: 'About Page',
+        }
+    );
+});
+
+app.get('/todo', function about(req, res) {
+    res.render(
+        'todo.hbs',
+        {
+            pageTitle: 'To do page regarding to this stuff',
+            stuffToDo: [
+                'Read more about node.js',
+                'Remember more about git commands',
+                'See how cloud deploying works',
+            ],
         }
     );
 });

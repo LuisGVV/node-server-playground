@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>About</title>
+    </head>
+    <li>
+        {{> header}}
+        
+        <ul> 
+        {{#each stuffToDo}}
+            <li>{{this}}</li>
+        {{/each}}
+        </ul>
+        {{> footer }}
+    </body>
+</html>
